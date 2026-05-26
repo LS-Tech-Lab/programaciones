@@ -84,7 +84,7 @@ if archivos_cargados:
                     programa_celda = "OTROS"
                     
                     for idx_row, row in df_completo.astype(str).iterrows():
-                        fila_unida = " ".join(row.values).upper()
+                        fila_unida = " ".join(str(v) for v in row.values).upper()
                         if programa_base == "OTROS" and programa_hoja == "OTROS":
                             if any(x in fila_unida for x in ["EDUCACION", "EDUCACIÓN"]): programa_celda = "EDUCACIÓN"
                             elif any(x in fila_unida for x in ["INGENIERIA", "INGENIERÍA"]): programa_celda = "INGENIERÍA"
